@@ -1,0 +1,211 @@
+local Translations = {
+    ["Auto Block"] = "自动格挡",
+    ["Range Distance to Detect"] = "格挡距离",
+    ["Sound time"] = "声音检测",
+    ["checks how long it should block a sound"] = "检测它应该格挡的声音有多长",
+    ["Auto Block delay"] = "自动格挡延迟",
+    ["u can add like uh"] = "你可以设置成",
+    ["Ping checker"] = "Ping检查",
+    ["Recommendation"] = "建议",
+    ["I usually prefer U SHOULD try using 13 or 10"] = "我通常建议你用13或者10",
+    ["Ping info"] = "延迟状态说明",
+    ["if green💚 = all perfect for auto block, If, yellow💛 = mid still good, lf red❤️ = Might"] = "绿色代表非常适合自动格挡,黄色代表延迟有点高但格挡还能用,红色代表延迟很高，会有很高的延迟",
+    ["Range Customizer"] = "格挡模式",
+    ["Default is the defaultrange and Customlook it for urself"] = "默认和定制，自己找吧🥰",
+    ["Default Range"] = "默认范围",
+    ["CustomizerRange"] = "定制格挡范围",
+    ["Front Size"] = "格挡正面尺寸",
+    ["just size.. yez"] = "只是格挡的尺寸...是的",
+    ["Left and Right Side"] = "左右两边格挡的尺寸",
+    ["just size... each side yez"] = "就是大小...两边各调就行,嗯对",
+    ["Auto Block Mode"] = "自动格挡模式",
+    ["Guest1337"] = "爱放屁的1337",
+    ["007"] = "蛋蛋鸡",
+    ["Charlie kirk"] = "右边可以选择格挡对象",
+    ["Anti Bait Features"] = "防诱饵",
+    ["Wall Check"] = "墙壁检测",
+    ["info"] = "信息",
+    ["btw anti bait ls Only For Customizer Range And lt's Still W.l.P"] = "顺便说一句，反诱饵只适合定制范围，它仍然是W.l.P",
+    ["Anti bait"] = "反诱饵",
+    ["Stamina"] = "体力设置",
+    ["lnfinte Stamina"] = "无限体力",
+    ["Min Stamina"] = "最小耐力值",
+    ["Max Stamina"] = "最大耐力值",
+    ["Drain Stamina"] = "耐力消耗",
+    ["Gain Stamina"] = "耐力恢复",
+    ["Sprint Speed"] = "冲刺速度",
+    ["Stamina Settings"] = "耐力设置",
+    ["Player"] = "玩家",
+    ["Remove Fog"] = "去雾",
+    ["Range Visualizer"] = "范围可视化",
+    ["Hitbox Dragging Tech"] = "碰撞箱判定框拖拽技术",
+    ["Hitbox dragging speed"] = "碰撞箱拖拽速度",
+    ["Speed of the drag"] = "拖拽速度",
+    ["Hitbox dragging delay"] = "碰撞箱拖拽延迟",
+    ["time tu wait for drag"] = "等待拖拽时间",
+    ["Guest Fake Lag tech"] = "访屁假延迟技巧",
+    ["Move to Stop the Fake lag"] = "移动以停止假延迟",
+    ["Aimbots"] = "自瞄杀手",
+    ["Auto Punch"] = "自动肘击",
+    ["Aimlock method for auto punch"] = "锁敌方法用于自动肘击",
+    ["Recommend - USE Cam+Char lock"] = "推荐使用：视角+人物锁定",
+    ["Camera-lock"] = "视角锁",
+    ["Character-lock"] = "人物锁",
+    ["Camera+char lock"] = "视角+人物锁定，非常推荐90%肘击",
+    ["All Aimbots"] = "所有自瞄功能",
+    ["Method"] = "模式",
+    ["Shedletsky Aimbot"] = "谢德自瞄",
+    ["Distance"] = "距离",
+    ["Prediction"] = "预判",
+    ["Character-lock"] = "角色锁定",
+    ["Camera+char lock"] = "视角+角色双锁定",
+    ["Lock Duration"] = "锁定持续时间",
+    ["Chance Aimbot"] = "自瞄触发概率",
+    ["Prediction"] = "自瞄预判",
+    ["Lock Duration"] = "锁定持续时间",
+    ["Two Time aimbot"] = "二次自瞄",
+    ["Distance"] = "距离",
+    ["Lock Duration"] = "锁定持续时间",
+    ["Dusekkar aimbot"] = "杜塞卡尔自瞄",
+    ["Distance"] = "距离",
+    ["Prediction"] = "瞄准预判",
+    ["Lock Duration"] = "锁定持续时间",
+    ["Killers"] = "杀手",
+    ["KillersAimbot"] = "杀手自瞄",
+    ["How To Use"] = "如何使用",
+    ["First Turn on The aimbot than Look at thesurviver u wanna lock on Than click theAimbot it will lock it"] = "首先开启自瞄，然后看向你想要锁定的幸存者，再点击自瞄功能，它就会进行锁定",
+    ["info"] = "说明",
+    ["it was supposed to be made for all killers but it Mostly Work perfect on Slasher and Johndoe and Guest666.. U can Use Noli, Coolkid1x too no problem"] = "本功能原本为所有杀手角色设计，但在砍杀者、约翰·多、访屁666 上效果最佳也可正常使用 Noli、Coolkid，1x4，无兼容问题",
+    ["Killer's"] = "杀手的",
+    ["Range"] = "范围",
+    ["Killer Mode"] = "杀手模式",
+    ["Slasher"] = "砍杀者",
+    ["John Doe"] = "约翰·多",
+    ["Survivors ESP"] = "幸存者透视",
+    ["Killers ESP"] = "杀手透视",
+    ["Items ESP"] = "物品透视",
+    ["Digital Footprint ESP"] = "约翰·多陷阱透视",
+    ["Spray ESP"] = "涂鸦透视",
+    ["Generators ESP"] = "发电机透视",
+    ["Christmas Candy ESP"] = "姜饼透视",
+    ["Auto Mini Game"] = "自动解谜",
+    ["thanks Cryptic For the Source"] = "感谢 Cryptic 提供源码",
+    ["Anti 1x1x1x1's Popup"] = "屏蔽 1x1x1x1 的弹窗",
+    ["Anti Slowness"] = "防减速",
+    ["Veeronica"] = "维罗妮卡",
+    ["try to catch me - veeronica"] = "来抓我啊 —— Veeronica",
+    ["Veeronica Auto TRICK"] = "维罗妮卡自动特技",
+    ["Device"] = "设备",
+    ["Select device method for veeronica Auto TRICK"] = "选择维罗妮卡自动特技的设备方式",
+    ["Mobile"] = "手机端",
+    ["PC/Laptop"] = "电脑/笔记本电脑",
+    ["Puzzle Cooldown"] = "解谜冷却",
+    ["Auto Generator Puzzle"] = "自动修复发电机",
+    ["Puzzle Highlight (just shows the correct line"] = "解谜高亮(仅显示正确线路)",
+    ["Manual Generator Button"] = "手动发电机按钮(手动触发修复)",
+    ["Thanks To Sphinx For the Script"] = "感谢 Sphinx 提供脚本",
+    ["By Veux/Veux67"] = "人汉化🥳",
+    ["Guesting Hub v2.4"] = "访客大厅 v2.4",
+}
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then return text end
+    if Translations[text] then return Translations[text] end
+    for en, cn in pairs(Translations) do
+        if text:find(en) then return text:gsub(en, cn) end
+    end
+    return text
+end
+
+local translatedElements = {}
+local originalTexts = {}
+
+local function safeTranslateElement(element)
+    if translatedElements[element] then return end
+    
+    pcall(function()
+        if element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") then
+            local currentText = element.Text
+            if currentText and currentText ~= "" then
+                if not originalTexts[element] then
+                    originalTexts[element] = currentText
+                end
+                
+                local translatedText = translateText(currentText)
+                if translatedText ~= currentText then
+                    element.Text = translatedText
+                    translatedElements[element] = true
+                end
+            end
+        end
+    end)
+end
+
+local function setupSmartListener()
+    local function onTextPropertyChanged(element)
+        if translatedElements[element] then
+            local currentText = element.Text
+            local originalText = originalTexts[element]
+            
+            if currentText == originalText or translateText(currentText) == currentText then
+                translatedElements[element] = nil
+                return
+            end
+            
+            local translatedText = translateText(currentText)
+            if translatedText ~= currentText then
+                element.Text = translatedText
+            end
+        else
+            safeTranslateElement(element)
+        end
+    end
+
+    local function addSmartListener(parent)
+        parent.DescendantAdded:Connect(function(descendant)
+            task.wait(0.3)
+            safeTranslateElement(descendant)
+            
+            if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                descendant:GetPropertyChangedSignal("Text"):Connect(function()
+                    task.wait(0.1)
+                    onTextPropertyChanged(descendant)
+                end)
+            end
+        end)
+    end
+    
+    pcall(addSmartListener, game:GetService("CoreGui"))
+    local player = game:GetService("Players").LocalPlayer
+    if player and player:FindFirstChild("PlayerGui") then
+        pcall(addSmartListener, player.PlayerGui)
+    end
+end
+
+local function delayedInitialTranslate()
+    task.wait(5)
+    
+    for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+        safeTranslateElement(gui)
+    end
+    
+    local player = game:GetService("Players").LocalPlayer
+    if player and player:FindFirstChild("PlayerGui") then
+        for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+            safeTranslateElement(gui)
+        end
+    end
+end
+
+task.wait(2)
+setupSmartListener()
+delayedInitialTranslate()
+
+local success, err = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/AutoBLOCKKKWAHV1"))() 
+
+end)
+
+if not success then
+    warn("加载失败:", err)
+end
