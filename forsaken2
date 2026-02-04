@@ -1,0 +1,124 @@
+local Translations = {
+    ["Auto Block"] = "自动格挡",
+    ["Range Distance to Detect"] = "格挡距离",
+    ["Sound time"] = "声音检测",
+    ["checks how long it should block a sound"] = "检测他应该格挡的声音有多长",
+    ["Auto Block delay"] = "自动格挡延迟",
+    ["u can add like uh 0.1,0.01, 0.001"] = "你可以设置成0.1,0.01,0.001",
+    ["Ping checker"] = "Ping检查",
+    ["Recommendation"] = "建议",
+    ["I usually prefer U SHOULD try using 13 or 10"] = "我通常建议你用13或者10",
+    ["Ping info"] = "延迟状态说明",
+    ["if green = all perfect for auto block, If, yellow = mid still good, lf red = Might"] = "绿色代表非常适合自动格挡,黄色代表延迟有点高但格挡还能用,红色代表延迟很高，会有很高的延迟",
+    ["Range Customizer"] = "自定义格挡范围",
+    ["Default is the defaultrange and Customlook it for urself"] = "默认和自定义，自己找吧",
+    ["Front Size"] = "格挡正面尺寸",
+    ["just size.. yez"] = "只是格的尺寸...是的",
+    ["Left and Right Side"] = "左右两边格挡的尺寸",
+    ["just size... each side yez"] = "就是大小...两边各调就行,嗯对",
+    ["Auto Block Mode"] = "自动格挡模式",
+    ["Guest1337"] = "爱放屁的1337",
+    ["Charlie kirk"] = "右边可以选择格挡对象",
+}
+
+local function translateText(text)
+    if not text or type(text) ~= "string" then return text end
+    if Translations[text] then return Translations[text] end
+    for en, cn in pairs(Translations) do
+        if text:find(en) then return text:gsub(en, cn) end
+    end
+    return text
+end
+
+local translatedElements = {}
+local originalTexts = {}
+
+local function safeTranslateElement(element)
+    if translatedElements[element] then return end
+    
+    pcall(function()
+        if element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") then
+            local currentText = element.Text
+            if currentText and currentText ~= "" then
+                if not originalTexts[element] then
+                    originalTexts[element] = currentText
+                end
+                
+                local translatedText = translateText(currentText)
+                if translatedText ~= currentText then
+                    element.Text = translatedText
+                    translatedElements[element] = true
+                end
+            end
+        end
+    end)
+end
+
+local function setupSmartListener()
+    local function onTextPropertyChanged(element)
+        if translatedElements[element] then
+            local currentText = element.Text
+            local originalText = originalTexts[element]
+            
+            if currentText == originalText or translateText(currentText) == currentText then
+                translatedElements[element] = nil
+                return
+            end
+            
+            local translatedText = translateText(currentText)
+            if translatedText ~= currentText then
+                element.Text = translatedText
+            end
+        else
+            safeTranslateElement(element)
+        end
+    end
+
+    local function addSmartListener(parent)
+        parent.DescendantAdded:Connect(function(descendant)
+            task.wait(0.3)
+            safeTranslateElement(descendant)
+            
+            if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
+                descendant:GetPropertyChangedSignal("Text"):Connect(function()
+                    task.wait(0.1)
+                    onTextPropertyChanged(descendant)
+                end)
+            end
+        end)
+    end
+    
+    pcall(addSmartListener, game:GetService("CoreGui"))
+    local player = game:GetService("Players").LocalPlayer
+    if player and player:FindFirstChild("PlayerGui") then
+        pcall(addSmartListener, player.PlayerGui)
+    end
+end
+
+local function delayedInitialTranslate()
+    task.wait(5)
+    
+    for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+        safeTranslateElement(gui)
+    end
+    
+    local player = game:GetService("Players").LocalPlayer
+    if player and player:FindFirstChild("PlayerGui") then
+        for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
+            safeTranslateElement(gui)
+        end
+    end
+end
+
+task.wait(2)
+setupSmartListener()
+delayedInitialTranslate()
+
+local success, err = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/AutoBLOCKKKWAHV1"))() 
+
+end)
+
+if not success then
+    warn("加载失败:", err)
+end
